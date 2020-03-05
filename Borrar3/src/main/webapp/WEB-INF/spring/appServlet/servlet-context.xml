@@ -25,8 +25,105 @@
 		<beans:property name="nombre" value="Ronnie" />
 		<beans:property name="edad" value="33" />
 	</beans:bean>
-		
 	
+	<beans:bean class="com.spring.bean.Persona" id="hector"> 
+		<beans:property name="nombre" value="Hector" />
+		<beans:property name="edad" value="22" />
+	</beans:bean>
+	
+	<beans:bean class="com.spring.bean.Persona" id="emmanuel"> 
+		<beans:property name="nombre" value="Emmanuel" />
+		<beans:property name="edad" value="33" />
+	</beans:bean>
+	
+	<beans:bean class="com.spring.bean.Persona" id="gus"> 
+		<beans:property name="nombre" value="Gus" />
+		<beans:property name="edad" value="33" />
+	</beans:bean>
+	
+	<beans:bean class="com.spring.bean.Empresa" id="empresa"> 
+		<beans:property name="nombre" value="ConejoMalo" />
+		<beans:property name="ceo" ref="emmanuel" />
+		<beans:property name="empleados">
+			<beans:list>
+				<beans:ref bean="hector"/>
+				<beans:ref bean="gus"/>
+				<beans:ref bean="emmanuel"/>
+				
+			</beans:list> 
+		</beans:property>	
+	</beans:bean>
+	
+	<beans:bean class="com.spring.bean.PersonaTarea" id="jorgeOcampo"> 
+		<beans:property name="nombre" value="Jorge Ocampo" />
+		<beans:property name="edad" value="33" />
+		<beans:property name="sueldoDiario" value="2100.34" />
+		<beans:property name="sexo" value="Masculino" />
+		<beans:property name="subordinados">
+			<beans:list>	
+			</beans:list> 
+		</beans:property>	
+	</beans:bean>
+	
+	<beans:bean class="com.spring.bean.PersonaTarea" id="perlaRamirez"> 
+		<beans:property name="nombre" value="Perla Ramirez" />
+		<beans:property name="edad" value="27" />
+		<beans:property name="sueldoDiario" value="1901.21" />
+		<beans:property name="sexo" value="Femenino" />
+		<beans:property name="subordinados">
+			<beans:list>	
+			</beans:list> 
+		</beans:property>
+	</beans:bean>
+	
+	<beans:bean class="com.spring.bean.PersonaTarea" id="rosarioLuna"> 
+		<beans:property name="nombre" value="Rosario Luna" />
+		<beans:property name="edad" value="19" />
+		<beans:property name="sueldoDiario" value="771.89" />
+		<beans:property name="sexo" value="Femenino" />
+		<beans:property name="subordinados">
+			<beans:list>	
+			</beans:list> 
+		</beans:property>
+	</beans:bean>
+	
+	<beans:bean class="com.spring.bean.PersonaTarea" id="angelRodriguez"> 
+		<beans:property name="nombre" value="Angel Rodriguez" />
+		<beans:property name="edad" value="31" />
+		<beans:property name="sueldoDiario" value="1021.89" />
+		<beans:property name="sexo" value="Masculino" />
+		<beans:property name="subordinados">
+			<beans:list>
+				<beans:ref bean="jorgeOcampo"/>
+				<beans:ref bean="rosarioLuna"/>		
+			</beans:list> 
+		</beans:property>	
+	</beans:bean>
+	
+	<beans:bean class="com.spring.bean.PersonaTarea" id="almaChavez"> 
+		<beans:property name="nombre" value="Alma Chavez" />
+		<beans:property name="edad" value="41" />
+		<beans:property name="sueldoDiario" value="1581.58" />
+		<beans:property name="sexo" value="Femenino" />
+		<beans:property name="subordinados">
+			<beans:list>
+				<beans:ref bean="perlaRamirez"/>		
+			</beans:list> 
+		</beans:property>	
+	</beans:bean>
+	
+	<beans:bean class="com.spring.bean.PersonaTarea" id="emmanuelGomez"> 
+		<beans:property name="nombre" value="Emmanuel Gómez" />
+		<beans:property name="edad" value="33" />
+		<beans:property name="sueldoDiario" value="5420.12" />
+		<beans:property name="sexo" value="Masculino" />
+		<beans:property name="subordinados">
+			<beans:list>
+				<beans:ref bean="angelRodriguez"/>	
+				<beans:ref bean="almaChavez"/>		
+			</beans:list> 
+		</beans:property>	
+	</beans:bean>	
 	
 	<context:component-scan base-package="com.spring.legacy" />
 	
